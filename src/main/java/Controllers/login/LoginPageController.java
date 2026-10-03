@@ -37,7 +37,7 @@ public class LoginPageController {
            Stage stage = new Stage();
 
            try {
-               stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/HomePage.fxml"))));
+               stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/DashboadPage.fxml"))));
            } catch (IOException e) {
                throw new RuntimeException(e);
            }
