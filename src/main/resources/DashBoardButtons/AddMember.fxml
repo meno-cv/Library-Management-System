@@ -15,7 +15,7 @@
    <children>
       <Label layoutX="225.0" layoutY="34.0" text="Add Member" textFill="#a67315" underline="true">
          <font>
-            <Font name="Serif Regular" size="28.0" />
+            <Font name="Serif Bold Italic" size="28.0" />
          </font>
       </Label>
       <HBox layoutX="76.0" layoutY="97.0" prefHeight="246.0" prefWidth="450.0">
@@ -50,6 +50,10 @@
             </VBox>
          </children>
       </HBox>
-      <Button layoutX="405.0" layoutY="337.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #8c6a47;" text="Register Member" textFill="#f8ab45" />
+      <Button layoutX="405.0" layoutY="337.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #8c6a47;" text="Register Member" textFill="#f8ab45">
+         <font>
+            <Font name="Noto Sans Armenian Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -16,9 +16,9 @@
          <top>
             <HBox alignment="CENTER" prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Library DashBoard" textFill="#806711" underline="true">
+                  <Label text="Library DashBoard" textFill="#9d6e19" underline="true">
                      <font>
-                        <Font size="26.0" />
+                        <Font name="System Bold Italic" size="26.0" />
                      </font>
                   </Label>
                </children>
