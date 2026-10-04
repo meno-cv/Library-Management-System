@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashBoardButtons.BorrowingHistoryController">
+   <children>
+      <Label layoutX="175.0" layoutY="31.0" text="Borrowing History" textFill="#a35817" underline="true">
+         <font>
+            <Font name="Serif Bold Italic" size="32.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableMembers" layoutX="73.0" layoutY="100.0" prefHeight="227.0" prefWidth="453.0">
+         <columns>
+            <TableColumn fx:id="colMemberID" prefWidth="75.0" text="Member ID" />
+            <TableColumn fx:id="colBookTitle" prefWidth="75.0" text="Book Title" />
+            <TableColumn fx:id="colIssueDate" prefWidth="75.0" text="Issue Date" />
+            <TableColumn fx:id="colDueDate" prefWidth="75.0" text="Due Date" />
+            <TableColumn fx:id="colReturnDate" prefWidth="75.0" text="Return Date" />
+            <TableColumn fx:id="colStatus" prefWidth="75.0" text="Status" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
