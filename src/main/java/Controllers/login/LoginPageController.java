@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -14,8 +15,6 @@ import java.io.IOException;
 public class LoginPageController {
 
     LoginController loginController = new LoginController();
-
-
 
     @FXML
     private Button btnLogin;
@@ -29,26 +28,50 @@ public class LoginPageController {
     @FXML
     private TextField txtUsername;
 
+
     @FXML
     void btnLoginOnAction(ActionEvent event) {
 
-       if (loginController.checkUserNameAndPassword(txtUsername.getText(), txtPassword.getText())){
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
 
-           Stage stage = new Stage();
+        if (username.isEmpty() || password.isEmpty()) {
 
-           try {
-               stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/DashboadPage.fxml"))));
-           } catch (IOException e) {
-               throw new RuntimeException(e);
-           }
-           stage.show();
-       }
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Login Warning");
+            alert.setHeaderText(null);
+            alert.setContentText("Please enter your username and password.");
+            alert.showAndWait();
 
+        } else if (loginController.checkUserNameAndPassword(username, password)) {
+
+            try {
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/DashboadPage.fxml"));
+                Scene scene = new Scene(loader.load());
+
+                Stage stage = (Stage) btnLogin.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        } else {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid username or password.");
+            alert.showAndWait();
+
+        }
     }
-
 
     @FXML
     void btnResetOnAction(ActionEvent event) {
+
         txtUsername.clear();
         txtPassword.clear();
 
