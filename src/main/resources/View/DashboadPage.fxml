@@ -31,7 +31,11 @@
                </padding>
                <children>
                   <Button fx:id="btnDashBoard" mnemonicParsing="false" prefWidth="150.0" text="DashBoard" />
-                  <Button fx:id="btnBooks" mnemonicParsing="false" prefWidth="150.0" text="Books" />
+                  <Button fx:id="btnBooks"
+                          mnemonicParsing="false"
+                          prefWidth="150.0"
+                          text="Books"
+                          onAction="#btnBooksOnAction" />
                   <Button fx:id="btnMembers" mnemonicParsing="false" prefWidth="150.0" text="Members" />
                   <Button fx:id="btnIssueBook" mnemonicParsing="false" prefWidth="150.0" text="Issue Book" />
                   <Button fx:id="btnReturnBook" mnemonicParsing="false" prefWidth="150.0" text="Return  Book" />
