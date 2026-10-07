@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="448.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.home.DashboardPageController">
    <children>
       <BorderPane layoutX="-1.0" layoutY="61.0" prefHeight="448.0" prefWidth="654.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -31,15 +30,11 @@
                </padding>
                <children>
                   <Button fx:id="btnDashBoard" mnemonicParsing="false" prefWidth="150.0" text="DashBoard" />
-                  <Button fx:id="btnBooks"
-                          mnemonicParsing="false"
-                          prefWidth="150.0"
-                          text="Books"
-                          onAction="#btnBooksOnAction" />
-                  <Button fx:id="btnMembers" mnemonicParsing="false" prefWidth="150.0" text="Members" />
-                  <Button fx:id="btnIssueBook" mnemonicParsing="false" prefWidth="150.0" text="Issue Book" />
-                  <Button fx:id="btnReturnBook" mnemonicParsing="false" prefWidth="150.0" text="Return  Book" />
-                  <Button fx:id="btnBorrowingHistory" mnemonicParsing="false" prefWidth="150.0" text="Borrowing History" />
+                  <Button fx:id="btnBooks" mnemonicParsing="false" onAction="#btnBooksOnAction" prefWidth="150.0" text="Books" />
+                  <Button fx:id="btnMembers" mnemonicParsing="false" onAction="#btnMembersOnAction" prefWidth="150.0" text="Members" />
+                  <Button fx:id="btnIssueBook" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefWidth="150.0" text="Issue Book" />
+                  <Button fx:id="btnReturnBook" mnemonicParsing="false" onAction="#btnReturnBookOnAction" prefWidth="150.0" text="Return  Book" />
+                  <Button fx:id="btnBorrowingHistory" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefWidth="150.0" text="Borrowing History" />
                   <Button fx:id="btnLogOut" mnemonicParsing="false" prefWidth="150.0" text="Log Out" />
                </children>
             </VBox>

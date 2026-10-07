@@ -7,6 +7,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 import java.io.IOException;
 
@@ -54,4 +60,62 @@ public class DashboardPageController {
             throw new RuntimeException(e);
         }
     }
+
+    @FXML
+    void btnMembersOnAction(ActionEvent event) {
+        try {
+            Stage stage = (Stage) btnMembers.getScene().getWindow();
+
+            stage.setScene(new Scene(
+                    FXMLLoader.load(getClass().getResource("/DashBoardButtons/ManageMembers.fxml"))
+            ));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void btnIssueBookOnAction(ActionEvent event) {
+        try {
+            Stage stage = (Stage) btnIssueBook.getScene().getWindow();
+
+            stage.setScene(new Scene(
+                    FXMLLoader.load(getClass().getResource("/DashBoardButtons/IssueBook.fxml"))
+            ));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void btnReturnBookOnAction(ActionEvent event) {
+        try {
+            Stage stage = (Stage) btnReturnBook.getScene().getWindow();
+
+            stage.setScene(new Scene(
+                    FXMLLoader.load(getClass().getResource("/DashBoardButtons/ReturnBook.fxml"))
+            ));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void btnBorrowingHistoryOnAction(ActionEvent event) {
+        try {
+            Stage stage = (Stage) btnBorrowingHistory.getScene().getWindow();
+
+            stage.setScene(new Scene(
+                    FXMLLoader.load(getClass().getResource("/DashBoardButtons/BorrowingHistory.fxml"))
+            ));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
