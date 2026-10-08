@@ -58,18 +58,17 @@ public class DashboardPageController {
 
     @FXML
     void btnMembersOnAction(ActionEvent event) {
-        try {
-            Stage stage = (Stage) btnMembers.getScene().getWindow();
 
+        Stage stage = (Stage) btnMembers.getScene().getWindow();
+
+        try {
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/DashBoardButtons/ManageMembers.fxml"))
             ));
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
     @FXML
     void btnIssueBookOnAction(ActionEvent event) {
         try {

@@ -1,27 +1,57 @@
 package Controllers.DashBoardButtons;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class AddMemberController {
 
     @FXML
-    private Label lblAddress;
+    private Button btnRegisterMember;
 
     @FXML
-    private Label lblEmail;
+    private TextField txtMemberID;
 
     @FXML
-    private Label lblFullName;
+    private TextField txtFullName;
 
     @FXML
-    private Label lblMemberID;
+    private TextField txtEmail;
 
     @FXML
-    private Label lblPhoneNumber;
+    private TextField txtPhoneNumber;
 
     @FXML
-    private Label lblQuantity;
+    private TextArea txtAddress;
+
+    @FXML
+    void btnRegisterMemberOnAction(ActionEvent event) {
+
+        if (txtMemberID.getText().trim().isEmpty() ||
+                txtFullName.getText().trim().isEmpty() ||
+                txtEmail.getText().trim().isEmpty() ||
+                txtPhoneNumber.getText().trim().isEmpty() ||
+                txtAddress.getText().trim().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill all the fields.");
+            alert.showAndWait();
+
+        } else {
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText(null);
+            alert.setContentText("Member registered successfully.");
+            alert.showAndWait();
+        }
+    }
+
+
 
 }
-

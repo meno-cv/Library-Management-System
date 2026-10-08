@@ -4,32 +4,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashBoardButtons.ManageMembersController">
+<AnchorPane prefHeight="456.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashBoardButtons.ManageMembersController">
    <children>
-      <Label layoutX="198.0" layoutY="32.0" text="Manage Members" textFill="#a16511" underline="true">
+      <Label layoutX="233.0" layoutY="36.0" text="Manage Members" textFill="#a16511" underline="true">
          <font>
             <Font name="Serif Bold Italic" size="28.0" />
          </font>
       </Label>
-      <TableView fx:id="tableMembers" layoutX="148.0" layoutY="134.0" prefHeight="200.0" prefWidth="304.0">
-        <columns>
-          <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email" />
-            <TableColumn fx:id="colPhone" prefWidth="75.0" text="Phone" />
-        </columns>
+      <TableView fx:id="tableMembers" layoutX="80.0" layoutY="157.0" prefHeight="228.0" prefWidth="515.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="121.9999771118164" text="ID" />
+            <TableColumn fx:id="colName" minWidth="2.6666259765625" prefWidth="113.33329772949219" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="159.33331298828125" text="Email" />
+            <TableColumn fx:id="colPhone" minWidth="0.0" prefWidth="119.33340454101562" text="Phone" />
+         </columns>
       </TableView>
-      <Label layoutX="68.0" layoutY="82.0" text="Search Members " underline="true" />
-      <Button fx:id="btnEdit" layoutX="418.0" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #8c6a47;" text="Edit " textFill="#fdd162">
+      <Button fx:id="btnEdit" layoutX="411.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #8c6a47;" text="Edit " textFill="#fdd162">
          <font>
             <Font name="Noto Sans Armenian Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnDelete" layoutX="493.0" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #8c6a47;" text="Delete" textFill="#ffeebe">
+      <Button fx:id="btnDelete" layoutX="510.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #8c6a47;" text="Delete" textFill="#ffeebe">
+         <font>
+            <Font name="Noto Sans Armenian Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="80.0" layoutY="120.0" text="Search Member : " />
+      <TextField fx:id="txtSearch" layoutX="188.0" layoutY="113.0" promptText="Enter to Search " />
+      <Button fx:id="btnAddMember" layoutX="501.0" layoutY="110.0" mnemonicParsing="false" onAction="#btnAddMemberOnAction" prefHeight="31.0" prefWidth="93.0" style="-fx-background-color: #8c6a47;" text="Add Member" textFill="#fdd162">
          <font>
             <Font name="Noto Sans Armenian Bold" size="12.0" />
          </font>

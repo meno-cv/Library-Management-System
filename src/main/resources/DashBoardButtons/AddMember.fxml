@@ -49,7 +49,7 @@
             </VBox>
          </children>
       </HBox>
-      <Button layoutX="405.0" layoutY="337.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #8c6a47;" text="Register Member" textFill="#f8ab45">
+      <Button fx:id="btnRegisterMember" layoutX="405.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnRegisterMemberOnAction" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #8c6a47;" text="Register Member" textFill="#f8ab45">
          <font>
             <Font name="Noto Sans Armenian Bold" size="12.0" />
          </font>
