@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
@@ -38,12 +37,12 @@
             </VBox>
             <VBox prefHeight="246.0" prefWidth="194.0" spacing="10.0">
                <children>
-                  <TextField promptText="Enter Book ID" />
-                  <TextField promptText="Enter Book Title" />
-                  <TextField promptText="Enter Author" />
-                  <TextField promptText="Enter Category" />
-                  <DatePicker />
-                  <Spinner />
+                  <TextField fx:id="txtBookID" promptText="Enter Book ID" />
+                  <TextField fx:id="txtBookTitle" promptText="Enter Book Title" />
+                  <TextField fx:id="txtAuthor" promptText="Enter Author" />
+                  <TextField fx:id="txtCategory" promptText="Enter Category" />
+                  <TextField fx:id="txtPublishedYear" layoutX="25.0" layoutY="136.0" promptText="Enter Year" />
+                  <Spinner fx:id="spnQuantity" />
                </children>
                <padding>
                   <Insets bottom="15.0" left="15.0" right="20.0" top="20.0" />
@@ -51,7 +50,7 @@
             </VBox>
          </children>
       </HBox>
-      <Button fx:id="btnAddBook" layoutX="402.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Add Book" textFill="#ffba53" />
-      <Button fx:id="btnClear" layoutX="497.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Clear" textFill="#fff383" />
+      <Button fx:id="btnAddBook" layoutX="402.0" layoutY="344.0" mnemonicParsing="false" onAction="#btnAddBookOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Add Book" textFill="#ffba53" />
+      <Button fx:id="btnClear" layoutX="497.0" layoutY="344.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Clear" textFill="#fff383" />
    </children>
 </AnchorPane>
