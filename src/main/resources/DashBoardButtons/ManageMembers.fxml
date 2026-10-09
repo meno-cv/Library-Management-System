@@ -23,12 +23,12 @@
             <TableColumn fx:id="colPhone" minWidth="0.0" prefWidth="119.33340454101562" text="Phone" />
          </columns>
       </TableView>
-      <Button fx:id="btnEdit" layoutX="411.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #8c6a47;" text="Edit " textFill="#fdd162">
+      <Button fx:id="btnEdit" layoutX="411.0" layoutY="398.0" mnemonicParsing="false" onAction="#btnEditOnAction" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #8c6a47;" text="Edit " textFill="#fdd162">
          <font>
             <Font name="Noto Sans Armenian Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnDelete" layoutX="510.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #8c6a47;" text="Delete" textFill="#ffeebe">
+      <Button fx:id="btnDelete" layoutX="510.0" layoutY="398.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #8c6a47;" text="Delete" textFill="#ffeebe">
          <font>
             <Font name="Noto Sans Armenian Bold" size="12.0" />
          </font>
