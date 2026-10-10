@@ -32,7 +32,16 @@
                   <Button fx:id="btnDashBoard" mnemonicParsing="false" prefWidth="150.0" text="DashBoard" />
                   <Button fx:id="btnBooks" mnemonicParsing="false" onAction="#btnBooksOnAction" prefWidth="150.0" text="Books" />
                   <Button fx:id="btnMembers" mnemonicParsing="false" onAction="#btnMembersOnAction" prefWidth="150.0" text="Members" />
-                  <Button fx:id="btnIssueBook" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefWidth="150.0" text="Issue Book" />
+                  <Button fx:id="btnIssueBook"
+                          layoutX="233.0"
+                          layoutY="322.0"
+                          mnemonicParsing="false"
+                          onAction="#btnIssueBookOnAction"
+                          prefHeight="37.0"
+                          prefWidth="165.0"
+                          style="-fx-background-color: #8c6a47;"
+                          text="Issue Book"
+                          textFill="#ffc955">
                   <Button fx:id="btnReturnBook" mnemonicParsing="false" onAction="#btnReturnBookOnAction" prefWidth="150.0" text="Return  Book" />
                   <Button fx:id="btnBorrowingHistory" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefWidth="150.0" text="Borrowing History" />
                   <Button fx:id="btnLogOut" mnemonicParsing="false" prefWidth="150.0" text="Log Out" />
