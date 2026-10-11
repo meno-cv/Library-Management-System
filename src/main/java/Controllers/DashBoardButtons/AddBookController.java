@@ -7,6 +7,8 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.SpinnerValueFactory;
+import Controllers.DashBoardButtons.Models.Book;
+import Controllers.DashBoardButtons.Models.BookData;
 
 public class AddBookController {
 
@@ -63,35 +65,41 @@ public class AddBookController {
     @FXML
     void btnAddBookOnAction() {
 
-        if (txtBookID.getText().isEmpty() ||
-                txtBookTitle.getText().isEmpty() ||
-                txtAuthor.getText().isEmpty() ||
-                txtCategory.getText().isEmpty() ||
-                txtPublishedYear.getText().isEmpty()) {
+        String id = txtBookID.getText().trim();
+        String title = txtBookTitle.getText().trim();
+        String author = txtAuthor.getText().trim();
+        String category = txtCategory.getText().trim();
+        String year = txtPublishedYear.getText().trim();
+        int quantity = spnQuantity.getValue();
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all the fields.");
-            alert.showAndWait();
+        if (id.isEmpty() || title.isEmpty() || author.isEmpty()
+                || category.isEmpty() || year.isEmpty()) {
 
-        } else if (!txtPublishedYear.getText().matches("\\d{4}")) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please enter a valid published year.");
-            alert.showAndWait();
-
-        } else {
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("Book added successfully.");
-            alert.showAndWait();
+            showAlert(Alert.AlertType.ERROR, "Please fill all the fields.");
+            return;
         }
+
+        if (!year.matches("\\d{4}")) {
+            showAlert(Alert.AlertType.ERROR, "Please enter a valid published year.");
+            return;
+        }
+
+        for (Book book : BookData.bookList) {
+            if (book.getId().equalsIgnoreCase(id)) {
+                showAlert(Alert.AlertType.ERROR, "This Book ID already exists.");
+                return;
+            }
+        }
+
+        Book book = new Book(id, title, author, category, year, quantity);
+        BookData.bookList.add(book);
+
+        showAlert(Alert.AlertType.INFORMATION, "Book added successfully.");
+
+        btnClearOnAction();
+
     }
+
 
     @FXML
     void btnClearOnAction() {
@@ -103,6 +111,14 @@ public class AddBookController {
         txtPublishedYear.clear();
 
         spnQuantity.getValueFactory().setValue(1);
+    }
+
+    private void showAlert(Alert.AlertType type, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(type == Alert.AlertType.ERROR ? "Error" : "Success");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }
