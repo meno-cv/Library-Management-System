@@ -47,6 +47,9 @@ public class ManageMembersController {
     private TextField txtSearch;
 
     @FXML
+    private Button btnBack;
+
+    @FXML
     public void initialize() {
 
         colID.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -190,5 +193,20 @@ public class ManageMembersController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @FXML
+    void btnBackOnAction() {
+
+        try {
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+
+            stage.setScene(new Scene(
+                    FXMLLoader.load(getClass().getResource("/View/DashboadPage.fxml"))
+            ));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

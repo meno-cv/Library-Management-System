@@ -8,6 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import Controllers.DashBoardButtons.Models.Book;
+import Controllers.DashBoardButtons.Models.BookData;
+import Controllers.DashBoardButtons.Models.Member;
+import Controllers.DashBoardButtons.Models.MemberData;
 
 import java.time.LocalDate;
 
@@ -43,20 +47,25 @@ public class IssueBookController {
     @FXML
     private DatePicker dpDueDate;
 
+
     @FXML
     public void initialize() {
 
-        cmbMember.setItems(FXCollections.observableArrayList(
-                "M001 - Alex",
-                "M002 - Sarah",
-                "M003 - David"
-        ));
+        cmbMember.setItems(FXCollections.observableArrayList());
 
-        cmbBook.setItems(FXCollections.observableArrayList(
-                "B001 - Java Basics",
-                "B002 - Database Systems",
-                "B003 - Web Development"
-        ));
+        for (Member member : MemberData.memberList) {
+            cmbMember.getItems().add(
+                    member.getId() + " - " + member.getName()
+            );
+        }
+
+        cmbBook.setItems(FXCollections.observableArrayList());
+
+        for (Book book : BookData.bookList) {
+            cmbBook.getItems().add(
+                    book.getId() + " - " + book.getTitle()
+            );
+        }
 
         dpIssueDate.setValue(LocalDate.now());
     }
