@@ -12,6 +12,8 @@ import Controllers.DashBoardButtons.Models.Book;
 import Controllers.DashBoardButtons.Models.BookData;
 import Controllers.DashBoardButtons.Models.Member;
 import Controllers.DashBoardButtons.Models.MemberData;
+import Controllers.DashBoardButtons.Models.Borrowing;
+import Controllers.DashBoardButtons.Models.BorrowingData;
 
 import java.time.LocalDate;
 
@@ -80,7 +82,6 @@ public class IssueBookController {
 
             showAlert(Alert.AlertType.ERROR,
                     "Please complete all the fields.");
-
             return;
         }
 
@@ -88,7 +89,6 @@ public class IssueBookController {
 
             showAlert(Alert.AlertType.ERROR,
                     "Issue date cannot be in the past.");
-
             return;
         }
 
@@ -96,9 +96,42 @@ public class IssueBookController {
 
             showAlert(Alert.AlertType.ERROR,
                     "Due date must be after the issue date.");
-
             return;
         }
+
+        String memberID = cmbMember.getValue().split(" - ")[0];
+        String bookID = cmbBook.getValue().split(" - ")[0];
+
+        Book selectedBook = null;
+
+        for (Book book : BookData.bookList) {
+            if (book.getId().equalsIgnoreCase(bookID)) {
+                selectedBook = book;
+                break;
+            }
+        }
+
+        if (selectedBook == null) {
+            showAlert(Alert.AlertType.ERROR, "Book not found.");
+            return;
+        }
+
+        if (selectedBook.getQuantity() <= 0) {
+            showAlert(Alert.AlertType.ERROR,
+                    "This book is currently unavailable.");
+            return;
+        }
+
+        Borrowing borrowing = new Borrowing(
+                memberID,
+                bookID,
+                dpIssueDate.getValue(),
+                dpDueDate.getValue()
+        );
+
+        BorrowingData.borrowingList.add(borrowing);
+
+        selectedBook.setQuantity(selectedBook.getQuantity() - 1);
 
         showAlert(Alert.AlertType.INFORMATION,
                 "Book issued successfully!");

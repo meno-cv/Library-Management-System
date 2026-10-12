@@ -52,5 +52,6 @@
       </HBox>
       <Button fx:id="btnAddBook" layoutX="402.0" layoutY="344.0" mnemonicParsing="false" onAction="#btnAddBookOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Add Book" textFill="#ffba53" />
       <Button fx:id="btnClear" layoutX="497.0" layoutY="344.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Clear" textFill="#fff383" />
+      <Button fx:id="btnBack" layoutX="57.0" layoutY="342.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #8c6a47;" text="← Back to Dashboard" textFill="#ffeebe" />
    </children>
 </AnchorPane>

@@ -9,6 +9,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.SpinnerValueFactory;
 import Controllers.DashBoardButtons.Models.Book;
 import Controllers.DashBoardButtons.Models.BookData;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class AddBookController {
 
@@ -53,6 +57,9 @@ public class AddBookController {
 
     @FXML
     private Spinner<Integer> spnQuantity;
+
+    @FXML
+    private Button btnBack;
 
 
     @FXML
@@ -119,6 +126,21 @@ public class AddBookController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @FXML
+    void btnBackOnAction() {
+
+        try {
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+
+            stage.setScene(new Scene(
+                    FXMLLoader.load(getClass().getResource("/View/DashboadPage.fxml"))
+            ));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
