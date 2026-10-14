@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashBoardButtons.IssueBookController">
    <children>
       <Label layoutX="228.0" layoutY="30.0" text="Issue Book" textFill="#86560e" underline="true">
@@ -43,10 +42,11 @@
             <Insets bottom="10.0" left="5.0" right="5.0" top="20.0" />
          </padding>
       </VBox>
-      <Button fx:id="btnIssueBook" layoutX="233.0" layoutY="322.0" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-color: #8c6a47;" text="Issue Book" textFill="#ffc955">
+      <Button fx:id="btnIssueBook" layoutX="312.0" layoutY="322.0" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-color: #8c6a47;" text="Issue Book" textFill="#ffc955">
          <font>
             <Font name="Noto Sans Armenian Bold" size="12.0" />
          </font>
       </Button>
+      <Button fx:id="btnBack" layoutX="57.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #8c6a47;" text="← Back to Dashboard" textFill="#ffeebe" />
    </children>
 </AnchorPane>

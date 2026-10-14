@@ -1,26 +1,34 @@
 package Controllers.DashBoardButtons;
 
+import Controllers.DashBoardButtons.Models.Book;
+import Controllers.DashBoardButtons.Models.BookData;
+import Controllers.DashBoardButtons.Models.Borrowing;
+import Controllers.DashBoardButtons.Models.BorrowingData;
+import Controllers.DashBoardButtons.Models.Member;
+import Controllers.DashBoardButtons.Models.MemberData;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import Controllers.DashBoardButtons.Models.Book;
-import Controllers.DashBoardButtons.Models.BookData;
-import Controllers.DashBoardButtons.Models.Member;
-import Controllers.DashBoardButtons.Models.MemberData;
-import Controllers.DashBoardButtons.Models.Borrowing;
-import Controllers.DashBoardButtons.Models.BorrowingData;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class IssueBookController {
 
     @FXML
     private Button btnIssueBook;
+
+    @FXML
+    private Button btnBack;
 
     @FXML
     private Label lblDueDate;
@@ -48,7 +56,6 @@ public class IssueBookController {
 
     @FXML
     private DatePicker dpDueDate;
-
 
     @FXML
     public void initialize() {
@@ -142,10 +149,35 @@ public class IssueBookController {
         dpDueDate.setValue(null);
     }
 
+    @FXML
+    void btnBackOnAction() {
+
+        try {
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+
+            stage.setScene(
+                    new Scene(
+                            FXMLLoader.load(
+                                    getClass().getResource(
+                                            "/View/DashboadPage.fxml"
+                                    )
+                            )
+                    )
+            );
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void showAlert(Alert.AlertType type, String message) {
 
         Alert alert = new Alert(type);
-        alert.setTitle(type == Alert.AlertType.ERROR ? "Error" : "Success");
+
+        alert.setTitle(
+                type == Alert.AlertType.ERROR ? "Error" : "Success"
+        );
+
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
