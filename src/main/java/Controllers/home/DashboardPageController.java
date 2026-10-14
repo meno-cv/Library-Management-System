@@ -7,6 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import Controllers.DashBoardButtons.Models.Book;
+import Controllers.DashBoardButtons.Models.BookData;
+import Controllers.DashBoardButtons.Models.Borrowing;
+import Controllers.DashBoardButtons.Models.BorrowingData;
+import Controllers.DashBoardButtons.Models.MemberData;
+
+import java.time.LocalDate;
 
 
 import java.io.IOException;
@@ -39,6 +46,12 @@ public class DashboardPageController {
 
     @FXML
     private Label lblTotalMembers;
+
+    @FXML
+    private Label lblCurrentlyBorrowed;
+
+    @FXML
+    private Label lblOverdue;
 
 
     @FXML
@@ -111,5 +124,58 @@ public class DashboardPageController {
         }
     }
 
+    @FXML
+    public void initialize() {
+
+        int totalBooks = 0;
+
+        for (Book book : BookData.bookList) {
+            totalBooks += book.getQuantity();
+        }
+
+        lblTotalBooks.setText(String.valueOf(totalBooks));
+
+        lblTotalMembers.setText(
+                String.valueOf(MemberData.memberList.size()));
+
+        int currentlyBorrowed = 0;
+        int overdue = 0;
+
+
+        for (Borrowing borrowing : BorrowingData.borrowingList) {
+
+            if (borrowing.getReturnDate() == null) {
+
+                currentlyBorrowed++;
+
+                if (LocalDate.now().isAfter(borrowing.getDueDate())) {
+                    overdue++;
+                }
+            }
+        }
+
+
+        lblCurrentlyBorrowed.setText(
+                String.valueOf(currentlyBorrowed));
+
+        lblOverdue.setText(String.valueOf(overdue));
+    }
+
+    @FXML
+    void btnLogOutOnAction(ActionEvent event) {
+
+        try {
+
+            Stage stage = (Stage) btnLogOut.getScene().getWindow();
+
+            stage.setScene(new Scene(
+                    FXMLLoader.load(
+                            getClass().getResource("/View/LoginPage.fxml"))
+            ));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

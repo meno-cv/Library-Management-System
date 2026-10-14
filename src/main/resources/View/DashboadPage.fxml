@@ -1,134 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.BorderPane?>
+        <?import javafx.scene.layout.HBox?>
+        <?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.text.Font?>
+        <?import java.net.URL?>
 
-<AnchorPane prefHeight="448.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.home.DashboardPageController">
+<AnchorPane prefHeight="448.0" prefWidth="654.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.home.DashboardPageController">
+
    <children>
-      <BorderPane layoutX="-1.0" layoutY="61.0" prefHeight="448.0" prefWidth="654.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="448.0" prefWidth="654.0"
+                  AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0">
+
          <top>
-            <HBox alignment="CENTER" prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="72.0">
                <children>
-                  <Label text="Library DashBoard" textFill="#9d6e19" underline="true">
+                  <Label text="Library Dashboard" underline="true">
                      <font>
-                        <Font name="System Bold Italic" size="26.0" />
+                        <Font name="System Bold Italic" size="26.0"/>
                      </font>
                   </Label>
                </children>
             </HBox>
          </top>
+
          <left>
-            <VBox prefHeight="189.0" prefWidth="156.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <VBox prefWidth="156.0" spacing="15.0">
                <padding>
-                  <Insets bottom="15.0" left="15.0" right="20.0" top="20.0" />
+                  <Insets top="20.0" right="10.0"
+                          bottom="15.0" left="10.0"/>
                </padding>
+
                <children>
-                  <Button fx:id="btnDashBoard" mnemonicParsing="false" prefWidth="150.0" text="DashBoard" />
-                  <Button fx:id="btnBooks" mnemonicParsing="false" onAction="#btnBooksOnAction" prefWidth="150.0" text="Books" />
-                  <Button fx:id="btnMembers" mnemonicParsing="false" onAction="#btnMembersOnAction" prefWidth="150.0" text="Members" />
+                  <Button fx:id="btnDashBoard"
+                          mnemonicParsing="false"
+                          prefWidth="136.0"
+                          text="Dashboard"/>
+
+                  <Button fx:id="btnBooks"
+                          mnemonicParsing="false"
+                          onAction="#btnBooksOnAction"
+                          prefWidth="136.0"
+                          text="Books"/>
+
+                  <Button fx:id="btnMembers"
+                          mnemonicParsing="false"
+                          onAction="#btnMembersOnAction"
+                          prefWidth="136.0"
+                          text="Members"/>
+
                   <Button fx:id="btnIssueBook"
                           mnemonicParsing="false"
                           onAction="#btnIssueBookOnAction"
-                          prefWidth="150.0"
-                          text="Issue Book" />
-                  <Button fx:id="btnReturnBook" mnemonicParsing="false" onAction="#btnReturnBookOnAction" prefWidth="150.0" text="Return  Book" />
-                  <Button fx:id="btnBorrowingHistory" mnemonicParsing="false" onAction="#btnBorrowingHistoryOnAction" prefWidth="150.0" text="Borrowing History" />
-                  <Button fx:id="btnLogOut" mnemonicParsing="false" prefWidth="150.0" text="Log Out" />
+                          prefWidth="136.0"
+                          text="Issue Book"/>
+
+                  <Button fx:id="btnReturnBook"
+                          mnemonicParsing="false"
+                          onAction="#btnReturnBookOnAction"
+                          prefWidth="136.0"
+                          text="Return Book"/>
+
+                  <Button fx:id="btnBorrowingHistory"
+                          mnemonicParsing="false"
+                          onAction="#btnBorrowingHistoryOnAction"
+                          prefWidth="136.0"
+                          text="Borrowing History"/>
+
+                  <Button fx:id="btnLogOut"
+                          mnemonicParsing="false"
+                          onAction="#btnLogOutOnAction"
+                          prefWidth="136.0"
+                          text="Log Out"/>
                </children>
             </VBox>
          </left>
          <center>
-            <VBox maxHeight="309.0" maxWidth="500.0" prefHeight="261.0" prefWidth="498.0" spacing="30.0" BorderPane.alignment="TOP_LEFT">
+            <VBox alignment="CENTER" spacing="20.0"
+                  BorderPane.alignment="CENTER">
+
+               <padding>
+                  <Insets top="15.0" right="15.0"
+                          bottom="15.0" left="15.0"/>
+               </padding>
+
                <children>
-                  <HBox prefHeight="120.0" prefWidth="498.0" spacing="30.0">
+
+                  <!-- First row -->
+                  <HBox alignment="CENTER" spacing="15.0">
+
                      <children>
-                        <HBox prefHeight="120.0" prefWidth="498.0" spacing="30.0">
+                        <VBox alignment="CENTER"
+                              prefWidth="180.0"
+                              prefHeight="120.0"
+                              spacing="12.0"
+                              styleClass="stat-card">
+
                            <children>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
-                                 <children>
-                                    <Label fx:id="lblTotalBooks" alignment="CENTER" contentDisplay="CENTER" text="Total Books " textAlignment="CENTER">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" text="0">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                 </padding>
-                              </VBox>
-                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
-                                 <children>
-                                    <Label fx:id="lblTotalMembers" prefHeight="30.0" prefWidth="134.0" text="Total Members">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                    <Label text="0">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                                 </padding>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="131.0" prefWidth="498.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="131.0" prefWidth="207.0">
-                           <children>
-                              <Label prefHeight="30.0" prefWidth="195.0" text="Currently Borrowed">
+                              <Label text="Total Books">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="17.0"/>
                                  </font>
                               </Label>
-                              <Label text="0">
+
+                              <Label fx:id="lblTotalBooks"
+                                     text="0">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font name="System Bold"
+                                          size="26.0"/>
                                  </font>
                               </Label>
                            </children>
-                           <padding>
-                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                           </padding>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
+
+                        <VBox alignment="CENTER"
+                              prefWidth="180.0"
+                              prefHeight="120.0"
+                              spacing="12.0"
+                              styleClass="stat-card">
+
                            <children>
-                              <Label text="OverDue">
+                              <Label text="Total Members">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font size="17.0"/>
                                  </font>
                               </Label>
-                              <Label text="0">
+
+                              <Label fx:id="lblTotalMembers"
+                                     text="0">
                                  <font>
-                                    <Font size="20.0" />
+                                    <Font name="System Bold"
+                                          size="26.0"/>
                                  </font>
                               </Label>
                            </children>
-                           <padding>
-                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                           </padding>
                         </VBox>
                      </children>
                   </HBox>
+
+                  <!-- Second row -->
+                  <HBox alignment="CENTER" spacing="15.0">
+
+                     <children>
+                        <VBox alignment="CENTER"
+                              prefWidth="180.0"
+                              prefHeight="120.0"
+                              spacing="12.0"
+                              styleClass="stat-card">
+
+                           <children>
+                              <Label text="Currently Borrowed">
+                                 <font>
+                                    <Font size="16.0"/>
+                                 </font>
+                              </Label>
+
+                              <Label fx:id="lblCurrentlyBorrowed"
+                                     text="0">
+                                 <font>
+                                    <Font name="System Bold"
+                                          size="26.0"/>
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER"
+                              prefWidth="180.0"
+                              prefHeight="120.0"
+                              spacing="12.0"
+                              styleClass="stat-card">
+
+                           <children>
+                              <Label text="Overdue">
+                                 <font>
+                                    <Font size="17.0"/>
+                                 </font>
+                              </Label>
+
+                              <Label fx:id="lblOverdue"
+                                     text="0">
+                                 <font>
+                                    <Font name="System Bold"
+                                          size="26.0"/>
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
                </children>
             </VBox>
          </center>
+
       </BorderPane>
    </children>
+
+   <stylesheets>
+      <URL value="@../style.css"/>
+   </stylesheets>
+
 </AnchorPane>
