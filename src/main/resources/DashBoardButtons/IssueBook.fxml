@@ -1,52 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashBoardButtons.IssueBookController">
+<AnchorPane prefHeight="470.0" prefWidth="650.0"
+            stylesheets="@../style.css"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.DashBoardButtons.IssueBookController">
    <children>
-      <Label layoutX="228.0" layoutY="30.0" text="Issue Book" textFill="#86560e" underline="true">
-         <font>
-            <Font name="Serif Bold Italic" size="32.0" />
-         </font>
-      </Label>
-      <VBox alignment="CENTER_LEFT" layoutX="166.0" layoutY="104.0" prefHeight="234.0" prefWidth="133.0" spacing="30.0">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="20.0" top="20.0" />
-         </padding>
+      <VBox spacing="35.0"
+            AnchorPane.topAnchor="25.0"
+            AnchorPane.bottomAnchor="25.0"
+            AnchorPane.leftAnchor="35.0"
+            AnchorPane.rightAnchor="35.0">
          <children>
-            <Label fx:id="lblSelectMember" text="Select Member :" />
-            <Label fx:id="lblSelectBook" text="Select Book :" />
-            <Label fx:id="lblSelectDate" text="Issue Date :" />
-            <Label fx:id="lblDueDate" text="Due Date :" />
-            <Label fx:id="lblQuantity" />
+            <Label text="Issue Book"
+                   maxWidth="Infinity"
+                   alignment="CENTER"
+                   style="-fx-text-fill: #8c6a47; -fx-font-size: 28px; -fx-font-family: Georgia;"/>
+
+            <GridPane hgap="20.0" vgap="22.0">
+               <columnConstraints>
+                  <ColumnConstraints minWidth="145.0" prefWidth="145.0"/>
+                  <ColumnConstraints hgrow="ALWAYS" minWidth="200.0"/>
+               </columnConstraints>
+               <children>
+                  <Label fx:id="lblSelectMember" text="Select Member:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                  <ComboBox fx:id="cmbMember" maxWidth="Infinity" promptText="Select member" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                  <Label fx:id="lblSelectBook" text="Select Book:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                  <ComboBox fx:id="cmbBook" maxWidth="Infinity" promptText="Select book" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                  <Label fx:id="lblSelectDate" text="Issue Date:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                  <DatePicker fx:id="dpIssueDate" maxWidth="Infinity" promptText="Issue date" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                  <Label fx:id="lblDueDate" text="Due Date:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                  <DatePicker fx:id="dpDueDate" maxWidth="Infinity" promptText="Due date" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+               </children>
+            </GridPane>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Button fx:id="btnBack" onAction="#btnBackOnAction" mnemonicParsing="false" text="← Back to Dashboard"/>
+                  <Region HBox.hgrow="ALWAYS"/>
+                  <Button fx:id="btnIssueBook" onAction="#btnIssueBookOnAction" mnemonicParsing="false" text="Issue Book"/>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <VBox layoutX="277.0" layoutY="104.0" prefHeight="191.0" prefWidth="133.0" spacing="20.0">
-         <children>
-            <ComboBox fx:id="cmbMember" prefHeight="25.0" prefWidth="125.0" promptText="Select member" />
-            <ComboBox fx:id="cmbBook" prefWidth="150.0" promptText="Select book" />
-            <DatePicker fx:id="dpIssueDate" promptText="Issue date" />
-            <DatePicker fx:id="dpDueDate" promptText="Due date" />
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="5.0" right="5.0" top="20.0" />
-         </padding>
-      </VBox>
-      <Button fx:id="btnIssueBook" layoutX="312.0" layoutY="322.0" mnemonicParsing="false" onAction="#btnIssueBookOnAction" prefHeight="37.0" prefWidth="165.0" style="-fx-background-color: #8c6a47;" text="Issue Book" textFill="#ffc955">
-         <font>
-            <Font name="Noto Sans Armenian Bold" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnBack" layoutX="57.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #8c6a47;" text="← Back to Dashboard" textFill="#ffeebe" />
    </children>
 </AnchorPane>
