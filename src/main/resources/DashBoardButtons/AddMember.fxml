@@ -6,53 +6,116 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashBoardButtons.AddMemberController">
+<AnchorPane prefHeight="500.0" prefWidth="650.0"
+            stylesheets="@../style.css"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.DashBoardButtons.AddMemberController">
+
    <children>
-      <Label layoutX="225.0" layoutY="34.0" text="Add Member" textFill="#a67315" underline="true">
-         <font>
-            <Font name="Serif Bold Italic" size="28.0" />
-         </font>
-      </Label>
-      <HBox layoutX="76.0" layoutY="97.0" prefHeight="246.0" prefWidth="450.0">
+      <VBox spacing="35.0"
+            AnchorPane.topAnchor="25.0"
+            AnchorPane.bottomAnchor="25.0"
+            AnchorPane.leftAnchor="35.0"
+            AnchorPane.rightAnchor="35.0">
+
          <children>
-            <VBox alignment="CENTER_LEFT" prefHeight="234.0" prefWidth="133.0" spacing="17.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="20.0" top="20.0" />
-               </padding>
+            <Label text="Add Member"
+                   maxWidth="Infinity"
+                   alignment="CENTER"
+                   style="-fx-text-fill: #8c6a47;
+                              -fx-font-size: 28px;
+                              -fx-font-family: Georgia;"/>
+
+            <GridPane hgap="20.0" vgap="18.0">
+               <columnConstraints>
+                  <ColumnConstraints minWidth="145.0"
+                                     prefWidth="145.0"/>
+                  <ColumnConstraints hgrow="ALWAYS"
+                                     minWidth="200.0"/>
+               </columnConstraints>
+
                <children>
-                  <Label fx:id="lblMemberID" text="Member ID :" />
-                  <Label fx:id="lblFullName" text="Full Name :" />
-                  <Label fx:id="lblEmail" text="Email :" />
-                  <Label fx:id="lblPhoneNumber" text="Phone Number :" />
-                  <Label fx:id="lblAddress" text="Address :" />
-                  <Label fx:id="lblQuantity" />
+                  <Label fx:id="lblMemberID"
+                         text="Member ID:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="0"/>
+
+                  <TextField fx:id="txtMemberID"
+                             promptText="Enter Member ID"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="0"/>
+
+                  <Label fx:id="lblFullName"
+                         text="Full Name:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="1"/>
+
+                  <TextField fx:id="txtFullName"
+                             promptText="Enter Full Name"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="1"/>
+
+                  <Label fx:id="lblEmail"
+                         text="Email:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="2"/>
+
+                  <TextField fx:id="txtEmail"
+                             promptText="Enter Email"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="2"/>
+
+                  <Label fx:id="lblPhoneNumber"
+                         text="Phone Number:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="3"/>
+
+                  <TextField fx:id="txtPhoneNumber"
+                             promptText="Enter Phone Number"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="3"/>
+
+                  <Label fx:id="lblAddress"
+                         text="Address:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="4"/>
+
+                  <TextArea fx:id="txtAddress"
+                            promptText="Enter Address"
+                            prefRowCount="3"
+                            wrapText="true"
+                            maxWidth="Infinity"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="4"/>
                </children>
-            </VBox>
-            <VBox prefHeight="246.0" prefWidth="194.0" spacing="10.0">
+            </GridPane>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
                <children>
-                  <TextField fx:id="txtMemberID" promptText="Enter ID" />
-                  <TextField fx:id="txtFullName" promptText="Enter Full Name" />
-                  <TextField fx:id="txtEmail" promptText="Enter Email" />
-                  <TextField fx:id="txtPhoneNumber" promptText="Enter Phone Number" />
-                  <TextArea fx:id="txtAddress" prefHeight="200.0" prefWidth="200.0" />
+
+                  <Region HBox.hgrow="ALWAYS"/>
+
+                  <Button fx:id="btnRegisterMember"
+                          onAction="#btnRegisterMemberOnAction"
+                          mnemonicParsing="false"
+                          text="Register Member"/>
                </children>
-               <padding>
-                  <Insets bottom="15.0" left="15.0" right="20.0" top="20.0" />
-               </padding>
-            </VBox>
+            </HBox>
          </children>
-      </HBox>
-      <Button fx:id="btnRegisterMember" layoutX="405.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnRegisterMemberOnAction" prefHeight="31.0" prefWidth="133.0" style="-fx-background-color: #8c6a47;" text="Register Member" textFill="#f8ab45">
-         <font>
-            <Font name="Noto Sans Armenian Bold" size="12.0" />
-         </font>
-      </Button>
+      </VBox>
    </children>
 </AnchorPane>

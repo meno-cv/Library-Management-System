@@ -6,52 +6,135 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashBoardButtons.AddBookController">
+<AnchorPane prefHeight="470.0" prefWidth="650.0"
+            stylesheets="@../style.css"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.DashBoardButtons.AddBookController">
+
    <children>
-      <Label layoutX="235.0" layoutY="22.0" text="Add Book" textFill="#916d3d" underline="true">
-         <font>
-            <Font name="Serif Regular" size="32.0" />
-         </font>
-      </Label>
-      <HBox layoutX="66.0" layoutY="87.0" prefHeight="246.0" prefWidth="450.0">
+      <VBox spacing="60.0"
+            AnchorPane.topAnchor="25.0"
+            AnchorPane.bottomAnchor="25.0"
+            AnchorPane.leftAnchor="35.0"
+            AnchorPane.rightAnchor="35.0">
+
          <children>
-            <VBox alignment="CENTER_LEFT" prefHeight="234.0" prefWidth="133.0" spacing="17.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="20.0" top="20.0" />
-               </padding>
+            <Label text="Add Book"
+                   maxWidth="Infinity"
+                   alignment="CENTER"
+                   style="-fx-text-fill: #8c6a47;
+                              -fx-font-size: 28px;
+                              -fx-font-family: Georgia;"/>
+
+            <GridPane hgap="20.0" vgap="15.0">
+               <columnConstraints>
+                  <ColumnConstraints minWidth="145.0"
+                                     prefWidth="145.0"/>
+                  <ColumnConstraints hgrow="ALWAYS"
+                                     minWidth="200.0"/>
+               </columnConstraints>
+
                <children>
-                  <Label fx:id="lblBookID" text="Book ID : " />
-                  <Label fx:id="lblBookTitle" text="Book Title :" />
-                  <Label fx:id="lblAuthor" text="Author :" />
-                  <Label fx:id="lblCategory" text="Category : " />
-                  <Label fx:id="lblPublishedYear" text="Published Year : " />
-                  <Label fx:id="lblQuantity" text="Quantity :" />
+                  <Label fx:id="lblBookID"
+                         text="Book ID:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="0"/>
+
+                  <TextField fx:id="txtBookID"
+                             promptText="Enter Book ID"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="0"/>
+
+                  <Label fx:id="lblBookTitle"
+                         text="Book Title:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="1"/>
+
+                  <TextField fx:id="txtBookTitle"
+                             promptText="Enter Book Title"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="1"/>
+
+                  <Label fx:id="lblAuthor"
+                         text="Author:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="2"/>
+
+                  <TextField fx:id="txtAuthor"
+                             promptText="Enter Author"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="2"/>
+
+                  <Label fx:id="lblCategory"
+                         text="Category:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="3"/>
+
+                  <TextField fx:id="txtCategory"
+                             promptText="Enter Category"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="3"/>
+
+                  <Label fx:id="lblPublishedYear"
+                         text="Published Year:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="4"/>
+
+                  <TextField fx:id="txtPublishedYear"
+                             promptText="Enter Published Year"
+                             maxWidth="Infinity"
+                             GridPane.columnIndex="1"
+                             GridPane.rowIndex="4"/>
+
+                  <Label fx:id="lblQuantity"
+                         text="Quantity:"
+                         GridPane.columnIndex="0"
+                         GridPane.rowIndex="5"/>
+
+                  <Spinner fx:id="spnQuantity"
+                           maxWidth="Infinity"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="5"/>
                </children>
-            </VBox>
-            <VBox prefHeight="246.0" prefWidth="194.0" spacing="10.0">
+            </GridPane>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
                <children>
-                  <TextField fx:id="txtBookID" promptText="Enter Book ID" />
-                  <TextField fx:id="txtBookTitle" promptText="Enter Book Title" />
-                  <TextField fx:id="txtAuthor" promptText="Enter Author" />
-                  <TextField fx:id="txtCategory" promptText="Enter Category" />
-                  <TextField fx:id="txtPublishedYear" layoutX="25.0" layoutY="136.0" promptText="Enter Year" />
-                  <Spinner fx:id="spnQuantity" />
+                  <Button fx:id="btnBack"
+                          onAction="#btnBackOnAction"
+                          mnemonicParsing="false"
+                          text="← Back to Dashboard"/>
+
+                  <Region HBox.hgrow="ALWAYS"/>
+
+                  <Button fx:id="btnAddBook"
+                          onAction="#btnAddBookOnAction"
+                          mnemonicParsing="false"
+                          text="Add Book"/>
+
+                  <Button fx:id="btnClear"
+                          onAction="#btnClearOnAction"
+                          mnemonicParsing="false"
+                          text="Clear"
+                          style="-fx-background-color: #e8ded0;
+                                       -fx-text-fill: #6f5034;"/>
                </children>
-               <padding>
-                  <Insets bottom="15.0" left="15.0" right="20.0" top="20.0" />
-               </padding>
-            </VBox>
+            </HBox>
          </children>
-      </HBox>
-      <Button fx:id="btnAddBook" layoutX="402.0" layoutY="344.0" mnemonicParsing="false" onAction="#btnAddBookOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Add Book" textFill="#ffba53" />
-      <Button fx:id="btnClear" layoutX="497.0" layoutY="344.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8c6a47;" text="Clear" textFill="#fff383" />
-      <Button fx:id="btnBack" layoutX="57.0" layoutY="342.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #8c6a47;" text="← Back to Dashboard" textFill="#ffeebe" />
+      </VBox>
    </children>
 </AnchorPane>
