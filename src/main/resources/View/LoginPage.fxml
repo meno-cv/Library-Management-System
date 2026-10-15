@@ -1,37 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
+<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.login.LoginPageController">
 
-<AnchorPane prefHeight="400.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.login.LoginPageController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="291.0" pickOnBounds="true">
-         <image>
-            <Image url="@../Img/library.jpg" />
-         </image>
-      </ImageView>
-      <Text fill="#885e03" layoutX="366.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Athenaeum Library" underline="true">
-         <font>
-            <Font name="Serif Regular" size="25.0" />
-         </font>
-      </Text>
-      <Text fill="#332f1c" layoutX="412.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" - Login - ">
-         <font>
-            <Font name="SimSun" size="19.0" />
-         </font>
-      </Text>
-      <Text layoutX="317.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username :" />
-      <Text layoutX="317.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password : " />
-      <TextField fx:id="txtUsername" layoutX="389.0" layoutY="154.0" prefHeight="11.0" prefWidth="149.0" promptText="Enter Username" />
-      <Button fx:id="btnLogin" layoutX="455.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #8c6a47;" text="Login" textFill="#ffe79f" AnchorPane.rightAnchor="106.66666666666663" />
-      <Button fx:id="btnReset" layoutX="538.0" layoutY="268.0" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #8c6a47;" text="Reset" textFill="#ffbb00" />
-      <PasswordField fx:id="txtPassword" layoutX="389.0" layoutY="187.0" promptText="Enter Password" />
+      <HBox prefHeight="450.0" prefWidth="700.0">
+         <ImageView fitHeight="450.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+               <Image url="@/Img/libpic.jpg" />
+            </image>
+         </ImageView>
+         <VBox alignment="CENTER" prefWidth="400.0" spacing="15.0" style="-fx-background-color: #f7f3ed;">
+
+            <padding>
+               <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+            </padding>
+
+            <children>
+               <Label text="Athenaeum Library"
+                      style="-fx-text-fill: #8c6a47; -fx-font-size: 25px; -fx-font-family: Georgia;">
+                  <font>
+                     <Font name="Georgia" size="25.0"/>
+                  </font>
+               </Label>
+
+               <Label text="Welcome Back">
+                  <font>
+                     <Font name="Georgia" size="19.0" />
+                  </font>
+               </Label>
+
+               <Label style="-fx-text-fill: #8c8175;" text="Please log in to continue" />
+
+               <VBox spacing="7.0">
+                  <children>
+                     <Label text="Username" />
+
+                     <TextField fx:id="txtUsername" prefHeight="35.0" promptText="Enter Username" />
+                  </children>
+               </VBox>
+
+               <VBox spacing="7.0">
+                  <children>
+                     <Label text="Password" />
+
+                     <PasswordField fx:id="txtPassword" prefHeight="35.0" promptText="Enter Password" />
+                  </children>
+               </VBox>
+
+               <HBox alignment="CENTER" spacing="12.0">
+                  <children>
+                     <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="145.0" text="Login" />
+
+                     <Button fx:id="btnReset" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #e8ded0;                                            -fx-text-fill: #6f5034;" text="Reset" />
+                  </children>
+               </HBox>
+
+               <Label style="-fx-text-fill: #8c6a47;                                   -fx-font-size: 10px;" text="KNOWLEDGE  •  COMMUNITY  •  GROWTH" />
+
+            </children>
+         </VBox>
+
+      </HBox>
    </children>
+
+   <stylesheets>
+      <URL value="@../style.css" />
+   </stylesheets>
+
 </AnchorPane>

@@ -1,40 +1,86 @@
 .root {
-    -fx-background-color: #f4f6f9;
-    -fx-font-family: "Arial";
+    -fx-background-color: #f7f3ed;
+    -fx-font-family: "Georgia";
 }
 
 .label {
-    -fx-text-fill: #263238;
+    -fx-text-fill: #332f1c;
+    -fx-font-size: 13px;
 }
 
 .button {
-    -fx-background-color: #2563eb;
-    -fx-text-fill: white;
+    -fx-background-color: #8c6a47;
+    -fx-text-fill: #fffdf9;
     -fx-font-size: 13px;
     -fx-font-weight: bold;
     -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
     -fx-cursor: hand;
-    -fx-padding: 9px 12px;
+    -fx-padding: 9px 14px;
 }
 
 .button:hover {
-    -fx-background-color: #1d4ed8;
+    -fx-background-color: #6f5034;
+}
+
+.text-field,
+.password-field,
+.text-area {
+    -fx-background-color: #fffdf9;
+    -fx-text-fill: #332f1c;
+    -fx-prompt-text-fill: #a39584;
+    -fx-border-color: #dfd2c1;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px;
+}
+
+.text-field:focused,
+.password-field:focused,
+.text-area:focused {
+    -fx-border-color: #8c6a47;
+    -fx-border-width: 1.5px;
+}
+
+.combo-box {
+    -fx-background-color: #fffdf9;
+    -fx-border-color: #dfd2c1;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.date-picker {
+    -fx-background-color: #fffdf9;
 }
 
 .table-view {
-    -fx-background-color: white;
-    -fx-border-color: #dbe2ea;
+    -fx-background-color: #fffdf9;
+    -fx-border-color: #dfd2c1;
     -fx-border-radius: 6px;
     -fx-background-radius: 6px;
 }
 
-.text-field {
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
-    -fx-border-color: #cbd5e1;
-    -fx-padding: 8px;
+.table-view .column-header-background {
+    -fx-background-color: #eee4d7;
 }
 
-.combo-box {
-    -fx-background-radius: 5px;
+.table-view .column-header .label {
+    -fx-text-fill: #332f1c;
+    -fx-font-weight: bold;
+}
+
+.stat-card {
+    -fx-background-color: #fffdf9;
+    -fx-border-color: #dfd2c1;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, #00000012, 8, 0.1, 0, 2);
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e8d8c3;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #332f1c;
 }
