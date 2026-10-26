@@ -33,7 +33,7 @@ Ensure you have a compatible JDK and the required project dependencies configure
 
 ## 📸 Screenshots
 
-Application screenshots will be added here!
+[View UI Screenshots](https://github.com/meno-cv/Library-Management-System/blob/main/Athenaeum%20Library%20Management%20System%20Screen-Shots.pdf)
 
 
 
