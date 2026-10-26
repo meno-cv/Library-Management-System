@@ -82,6 +82,7 @@ public class AddMemberController {
         Stage stage = (Stage) btnRegisterMember.getScene().getWindow();
 
         try {
+            stage.setTitle("Athenaeum Library | Manage Members");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource(
                             "/DashBoardButtons/ManageMembers.fxml"))

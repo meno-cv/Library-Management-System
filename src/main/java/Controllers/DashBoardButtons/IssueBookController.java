@@ -8,7 +8,6 @@ import Controllers.DashBoardButtons.Models.Member;
 import Controllers.DashBoardButtons.Models.MemberData;
 
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -80,7 +79,7 @@ public class IssueBookController {
     }
 
     @FXML
-    void btnIssueBookOnAction(ActionEvent event) {
+    void btnIssueBookOnAction(javafx.event.ActionEvent event) {
 
         if (cmbMember.getValue() == null ||
                 cmbBook.getValue() == null ||
@@ -155,6 +154,7 @@ public class IssueBookController {
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Dashboard");
             stage.setScene(
                     new Scene(
                             FXMLLoader.load(

@@ -72,9 +72,7 @@ public class BorrowingHistoryController {
         colStatus.setCellValueFactory(
                 new PropertyValueFactory<>("status"));
 
-
         borrowingList.setAll(BorrowingData.borrowingList);
-
 
         for (Borrowing borrowing : borrowingList) {
 
@@ -112,6 +110,7 @@ public class BorrowingHistoryController {
 
             Stage stage = (Stage) btnBack.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Dashboard");
             stage.setScene(scene);
 
         } catch (IOException e) {

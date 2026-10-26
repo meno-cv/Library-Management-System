@@ -109,7 +109,6 @@ public class ReturnBookController {
         displayBorrowingDetails();
     }
 
-
     private void displayBorrowingDetails() {
 
         Borrowing borrowing = cmbBorrowing.getValue();
@@ -252,6 +251,7 @@ public class ReturnBookController {
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Dashboard");
             stage.setScene(
                     new Scene(
                             FXMLLoader.load(
@@ -267,7 +267,6 @@ public class ReturnBookController {
         }
     }
 
-
     private void showAlert(Alert.AlertType type, String message) {
 
         Alert alert = new Alert(type);
@@ -280,6 +279,4 @@ public class ReturnBookController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
 }
-

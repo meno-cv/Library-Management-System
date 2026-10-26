@@ -84,6 +84,7 @@ public class ManageMembersController {
         Stage stage = (Stage) btnAddMember.getScene().getWindow();
 
         try {
+            stage.setTitle("Athenaeum Library | Add Member");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource(
                             "/DashBoardButtons/AddMember.fxml"))
@@ -201,6 +202,7 @@ public class ManageMembersController {
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Dashboard");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/View/DashboadPage.fxml"))
             ));

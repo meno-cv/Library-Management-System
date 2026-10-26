@@ -17,7 +17,7 @@
 
    <children>
       <HBox prefHeight="450.0" prefWidth="700.0">
-         <ImageView fitHeight="450.0" fitWidth="284.0" pickOnBounds="true" preserveRatio="false">
+         <ImageView fitHeight="450.0" fitWidth="305.0" pickOnBounds="true" preserveRatio="false">
             <image>
                <Image url="@../Img/photo_2026-10-15_23-07-47.jpg" />
             </image>

@@ -28,7 +28,6 @@ public class LoginPageController {
     @FXML
     private TextField txtUsername;
 
-
     @FXML
     void btnLoginOnAction(ActionEvent event) {
 
@@ -51,6 +50,7 @@ public class LoginPageController {
                 Scene scene = new Scene(loader.load());
 
                 Stage stage = (Stage) btnLogin.getScene().getWindow();
+                stage.setTitle("Athenaeum Library | Dashboard");
                 stage.setScene(scene);
                 stage.show();
 

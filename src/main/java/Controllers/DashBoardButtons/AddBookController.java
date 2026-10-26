@@ -61,7 +61,6 @@ public class AddBookController {
     @FXML
     private Button btnBack;
 
-
     @FXML
     public void initialize() {
         spnQuantity.setValueFactory(
@@ -104,9 +103,7 @@ public class AddBookController {
         showAlert(Alert.AlertType.INFORMATION, "Book added successfully.");
 
         btnClearOnAction();
-
     }
-
 
     @FXML
     void btnClearOnAction() {
@@ -134,6 +131,7 @@ public class AddBookController {
         try {
             Stage stage = (Stage) btnBack.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Dashboard");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/View/DashboadPage.fxml"))
             ));
@@ -142,5 +140,4 @@ public class AddBookController {
             throw new RuntimeException(e);
         }
     }
-
 }

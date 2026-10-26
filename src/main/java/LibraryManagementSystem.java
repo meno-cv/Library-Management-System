@@ -11,7 +11,10 @@ public class LibraryManagementSystem extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/LoginPage.fxml"))));
+        primaryStage.setTitle("Athenaeum Library | Login");
+        primaryStage.setScene(new Scene(
+                FXMLLoader.load(getClass().getResource("/View/LoginPage.fxml"))
+        ));
         primaryStage.show();
     }
 }

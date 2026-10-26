@@ -14,8 +14,6 @@ import Controllers.DashBoardButtons.Models.BorrowingData;
 import Controllers.DashBoardButtons.Models.MemberData;
 
 import java.time.LocalDate;
-
-
 import java.io.IOException;
 
 public class DashboardPageController {
@@ -53,13 +51,12 @@ public class DashboardPageController {
     @FXML
     private Label lblOverdue;
 
-
     @FXML
     void btnBooksOnAction(ActionEvent event) {
-
         try {
             Stage stage = (Stage) btnBooks.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Add Book");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/DashBoardButtons/AddBook.fxml"))
             ));
@@ -71,22 +68,25 @@ public class DashboardPageController {
 
     @FXML
     void btnMembersOnAction(ActionEvent event) {
-
-        Stage stage = (Stage) btnMembers.getScene().getWindow();
-
         try {
+            Stage stage = (Stage) btnMembers.getScene().getWindow();
+
+            stage.setTitle("Athenaeum Library | Manage Members");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/DashBoardButtons/ManageMembers.fxml"))
             ));
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     void btnIssueBookOnAction(ActionEvent event) {
         try {
             Stage stage = (Stage) btnIssueBook.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Issue Book");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/DashBoardButtons/IssueBook.fxml"))
             ));
@@ -101,6 +101,7 @@ public class DashboardPageController {
         try {
             Stage stage = (Stage) btnReturnBook.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Return Book");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/DashBoardButtons/ReturnBook.fxml"))
             ));
@@ -115,6 +116,7 @@ public class DashboardPageController {
         try {
             Stage stage = (Stage) btnBorrowingHistory.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Borrowing History");
             stage.setScene(new Scene(
                     FXMLLoader.load(getClass().getResource("/DashBoardButtons/BorrowingHistory.fxml"))
             ));
@@ -141,7 +143,6 @@ public class DashboardPageController {
         int currentlyBorrowed = 0;
         int overdue = 0;
 
-
         for (Borrowing borrowing : BorrowingData.borrowingList) {
 
             if (borrowing.getReturnDate() == null) {
@@ -154,7 +155,6 @@ public class DashboardPageController {
             }
         }
 
-
         lblCurrentlyBorrowed.setText(
                 String.valueOf(currentlyBorrowed));
 
@@ -163,19 +163,16 @@ public class DashboardPageController {
 
     @FXML
     void btnLogOutOnAction(ActionEvent event) {
-
         try {
-
             Stage stage = (Stage) btnLogOut.getScene().getWindow();
 
+            stage.setTitle("Athenaeum Library | Login");
             stage.setScene(new Scene(
-                    FXMLLoader.load(
-                            getClass().getResource("/View/LoginPage.fxml"))
+                    FXMLLoader.load(getClass().getResource("/View/LoginPage.fxml"))
             ));
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
 }
